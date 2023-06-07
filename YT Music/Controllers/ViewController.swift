@@ -24,6 +24,9 @@ class ViewController: NSViewController {
     var forwardObservation: NSKeyValueObservation?
     var keyboardShortcuts: [KeyboardShortcut: HotKey] = [:]
     
+    let navOffsetY : CGFloat = 14
+    let titlebarHeight : CGFloat = 64
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -97,9 +100,9 @@ class ViewController: NSViewController {
             standardButtonsView.addSubview(btn)
         }
         
-        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - 64, width: webView.frame.width, height: 64)
+        movableView.frame = CGRect(x: 0, y: webView.isFlipped ? 0 : webView.frame.height - titlebarHeight, width: webView.frame.width, height: titlebarHeight)
         
-        let y = webView.isFlipped ? 14 : webView.frame.height - 46
+        let y = webView.isFlipped ? navOffsetY : webView.frame.height - 32 - navOffsetY
         
         var frame = backButton.frame
         frame.origin = CGPoint(x: 90, y: y)
@@ -157,7 +160,7 @@ class ViewController: NSViewController {
         backButton.bezelStyle = .shadowlessSquare
         backButton.isBordered = false
         
-        let y = webView.isFlipped ? 14 : webView.frame.height - 46
+        let y = webView.isFlipped ? navOffsetY : webView.frame.height - 32 - navOffsetY
         
         backButton.frame = CGRect(x: 90, y: y, width: 32, height: 32)
         
@@ -185,12 +188,12 @@ class ViewController: NSViewController {
     }
 
     func addStandardButtonsView() {
-        standardButtonsView = NSView(frame: CGRect(x: 14, y: 0, width: 80, height: 43))
+        standardButtonsView = NSView(frame: CGRect(x: 14, y: 0, width: 80, height: 29 + navOffsetY))
         webView.addSubview(standardButtonsView)
     }
     
     func addMovableView() {
-        movableView = WindowMovableView(frame: CGRect(x: 0, y: 0, width: webView.frame.width, height: 64))
+        movableView = WindowMovableView(frame: CGRect(x: 0, y: 0, width: webView.frame.width, height: titlebarHeight))
         webView.addSubview(movableView)
     }
     
