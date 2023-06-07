@@ -17,3 +17,7 @@ ytmusic-nav-bar {
 .logo.ytmusic-nav-bar, ytmusic-logo {
     display: none;
 }
+
+ytmusic-search-box {
+    max-width: 57.5%;
+}
