@@ -24,7 +24,7 @@ class ViewController: NSViewController {
     var forwardObservation: NSKeyValueObservation?
     var keyboardShortcuts: [KeyboardShortcut: HotKey] = [:]
     
-    let navOffsetY : CGFloat = 14
+    let navOffsetY : CGFloat = 16
     let titlebarHeight : CGFloat = 64
     
     override func viewDidLoad() {
