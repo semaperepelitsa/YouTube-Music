@@ -185,8 +185,7 @@ class ViewController: NSViewController {
     }
 
     func addStandardButtonsView() {
-        standardButtonsView = NSView(frame: .zero)
-        standardButtonsView.frame = CGRect(x: 14, y: 0, width: 80, height: 40)
+        standardButtonsView = NSView(frame: CGRect(x: 14, y: 0, width: 80, height: 43))
         webView.addSubview(standardButtonsView)
     }
     
