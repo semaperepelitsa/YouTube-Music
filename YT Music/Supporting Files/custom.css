@@ -14,6 +14,6 @@ ytmusic-nav-bar {
 /*    padding-left: 100px;*/
 }
 
-.logo.ytmusic-nav-bar {
+.logo.ytmusic-nav-bar, ytmusic-logo {
     display: none;
 }
